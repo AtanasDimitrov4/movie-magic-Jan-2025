@@ -15,7 +15,11 @@ app.set('views', './src/views');
 app.use('/static', express.static('src/public'));
 
 app.get('/', (req, res) => {
-    res.render('home', { layout: false });
+    res.render('home');
 });
+
+//app.get('/about', (req, res) =>{
+    //res.render()
+//})
 
 app.listen(6969, () => console.log('Server is listening on http://localhost:6969...'));
