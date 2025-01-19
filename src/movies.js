@@ -43,5 +43,17 @@ export default [
         year: '1990', 
         rating: '7.7',
         category: 'Movie',
-    }
+    },
+    {
+        id: 'b95fb888-e297-4bc5-940e-ef6e52b9af1e',
+        title: 'The Wire',
+        category: 'tv-show',
+        genre: 'Drama',
+        director: 'David Simon',
+        year: '2002',
+        imageUrl: 'https://m.media-amazon.com/images/I/61cJb+LQ47L._AC_UF894,1000_QL80_.jpg',
+        rating: '9.3',
+        description: 'The Baltimore drug scene, as seen through the eyes of drug dealers and law enforcement.'   
+      }
+
 ]
