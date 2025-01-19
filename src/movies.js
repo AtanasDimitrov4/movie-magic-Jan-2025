@@ -7,7 +7,7 @@ export default [
         imageUrl: '/static/img/jungle-cruise.jpeg',
         director: 'Jaume Collet-Serra',
         year: '2021',
-        rating: '6.6',
+        rating: 6.6,
         category: 'Movie'
 
     },
@@ -19,7 +19,7 @@ export default [
         imageUrl: '/static/img/the-little-mermaid.jpg',
         director: 'Rob Marshall',
         year: '2023',
-        rating: '3',
+        rating: 3,
         category: 'Movie'
     },
     {
@@ -30,7 +30,7 @@ export default [
         imageUrl: '/static/img//Navcho-vs-Tcocolancho.webp',
         director: 'Michael Bay',
         year: 'TBA', //2038
-        rating: '6.3',
+        rating: 6.3,
         category: 'Movie',
     },
     {
@@ -41,7 +41,7 @@ export default [
         imageUrl: '/static/img/home-alone.jpeg',
         director: 'Chris Columbus',
         year: '1990', 
-        rating: '7.7',
+        rating: 7.7,
         category: 'Movie',
     },
     {
@@ -52,7 +52,7 @@ export default [
         director: 'David Simon',
         year: '2002',
         imageUrl: 'https://m.media-amazon.com/images/I/61cJb+LQ47L._AC_UF894,1000_QL80_.jpg',
-        rating: '9.3',
+        rating: 9.3,
         description: 'The Baltimore drug scene, as seen through the eyes of drug dealers and law enforcement.'   
       }
 
