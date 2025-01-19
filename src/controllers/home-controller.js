@@ -5,6 +5,7 @@ const router = Router();
 
 
 router.get('/', (req, res) => {
+    console.log(movies);
     res.render('home', { movies });
 });
 
