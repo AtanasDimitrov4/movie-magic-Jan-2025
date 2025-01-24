@@ -29,7 +29,7 @@ export default [
         description: 'The epic next chapter in the cinematic Monsterverse pits two of the   greatest icons in motion picture history against each other-the fearsome Navcho and the mighty Tcocolanko-with humanity caught in the balance.',
         imageUrl: '/static/img//Navcho-vs-Tcocolancho.webp',
         director: 'Michael Bay',
-        year: 'TBA', //2038
+        year: '2038', //TBA
         rating: 6.3,
         category: 'Movie',
     },
