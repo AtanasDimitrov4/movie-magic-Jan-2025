@@ -5,8 +5,11 @@ import movieService from '../services/movie-service.js';
 const router = Router();
 
 
-router.get('/', (req, res) => {
-    const movies = movieService.getAll();
+router.get('/', async (req, res) => {
+    const movies = await movieService.getAll().lean();
+
+    // Convert documents to plain objects
+    //const plainMovies = movies.map(m => m.toObject());
    
     res.render('home', { movies });
 });

@@ -11,11 +11,11 @@ const app = express();
 
 //db config
 try{
-   const uri = 'mongodb://localhost:27017/magic-movies-softuni'
+   const uri = 'mongodb://127.0.0.1:27017/magic-movies-softuni'
    await mongoose.connect(uri);
 
    console.log('DB Connected Successfuly!');
-}catch{
+} catch (err) {
     console.log('Cannot connect to DB');
     console.error(err.message)
 }
