@@ -9,16 +9,16 @@ export default {
 
         if(filter.search) {
             //TODO: fix partial case insensetive search
-           query = query.find({title: filter.search});
+           query = query.where({title: filter.search});
         }
 
         if(filter.genre){
             //TODO: add case insensetive search
-          query = query.find({ genre: filter.genre});
+          query = query.where({ genre: filter.genre});
         }
 
         if(filter.year) {
-            query = query.find({year: Number(filter.year)});
+            query = query.where({year: Number(filter.year)});
             
         }
        
