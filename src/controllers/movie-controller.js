@@ -28,8 +28,10 @@ movieController.get('/:movieId/details', async (req, res) => {
     const movie = await movieService.getOne(movieId).lean();
 
     
-     res.render('details', { movie });
+     res.render('movie/details', { movie });
 });
+
+movieController.get('')
 
 
 export default movieController;
