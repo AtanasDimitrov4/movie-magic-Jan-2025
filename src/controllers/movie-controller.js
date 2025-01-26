@@ -31,7 +31,9 @@ movieController.get('/:movieId/details', async (req, res) => {
      res.render('movie/details', { movie });
 });
 
-movieController.get('')
+movieController.get('/attach-cast', (req, res) => {
+     res.render('movie/attach-cast')
+});
 
 
 export default movieController;
