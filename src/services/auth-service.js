@@ -2,7 +2,7 @@ import User from "../models/User.js";
 import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-const SECRET = 'csjje083.AYMeZCNubrbawZj2KOq1sdErtGYeWXTQYI69wvLBBAyTeUSQKq';
+const SECRET = process.env.JWT_SECRET || 'BASICSECRET';
 
 export default {
     register(userData) {
