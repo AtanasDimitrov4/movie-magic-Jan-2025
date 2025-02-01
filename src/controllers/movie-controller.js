@@ -50,6 +50,7 @@ movieController.post('/:movieId/attach-cast', async (req, res) => {
 
     res.redirect(`/movies/${movieId}/details`);
 });
+
 movieController.get('/:movieId/delete', async (req, res) => {
     const movieId = req.params.movieId;
 
@@ -61,6 +62,10 @@ movieController.get('/:movieId/delete', async (req, res) => {
     await movieService.delete(movieId);
 
     res.redirect('/');
+});
+
+movieController.get('/:movieId/edit',  (req, res) =>{
+   res.render('movie/edit');
 });
 
 
