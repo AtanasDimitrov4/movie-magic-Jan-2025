@@ -95,8 +95,8 @@ function getCategoriesViewData(category) {
     const categoriesMap = {
         'tv-show': 'TV Show' ,
         'animation': 'Animation',
-        'movie' : 'Movie' ,
-        'documentary' : 'Documentary',
+        'movie': 'Movie' ,
+        'documentary': 'Documentary',
         'short-film': 'Short Film',
     };
     const categories = Object.keys(categoriesMap).map(value => ({
