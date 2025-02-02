@@ -23,9 +23,9 @@
                                 <p class="card-category">Category: {{movie.category}}</p>
                                   {{#if isCreator}}
                                 <div style="display: flex; justify-content: center;">
-                                    <a href="/movies/{{movie._id}}/attach-cast" class="details">Attach</a>
-                                    <a href="/movie/{{movie._id}}/edit" class="details">Edit</a>
-                                    <a href="/movies/{{movie._id}}/delete" class="details">Delete</a>
+                                    <a href="/movies/{{movie.id}}/attach-cast" class="details">Attach</a>
+                                    <a href="/movies/{{movie.id}}/edit" class="details">Edit</a>
+                                    <a href="/movies/{{movie.id}}/delete" class="details">Delete</a>
                                 </div>
                                 {{/if}}
                         </div>
@@ -47,7 +47,7 @@
                             <h1>{{name}}</h1>
                             <h3>Age: {{age}}</h3>
                             <h3>Born: {{born}}</h3>
-                            <h3>Name in Movie: Ariel</h3>
+                            
                         </div>
                     </div>
                         {{/each}}

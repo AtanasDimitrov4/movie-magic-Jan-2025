@@ -6,7 +6,7 @@ const router = Router();
 
 
 router.get('/', async (req, res) => {
-    const movies = await movieService.getAll().lean();
+    const movies = await movieService.getAll();
 
     // Convert documents to plain objects
     //const plainMovies = movies.map(m => m.toObject());
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/about', (req, res) =>{
-    res.render('about');
+    res.render('about', {pageTitle: 'About'});
 });
 
 export default router;
