@@ -19,7 +19,7 @@ movieController.post('/create', async (req, res) => {
     const newMovie = req.body;
     const UserId = req.user?._id;
     
-   await movieService.create(newMovie, UserId);
+   await movieService.create(newMovie, UserId).lean();
 
     res.redirect('/');
 });
@@ -45,7 +45,7 @@ movieController.get('/:movieId/attach-cast', async (req, res) => {
 movieController.post('/:movieId/attach-cast', async (req, res) => {
     const castId = req.body.cast;
     const movieId = req.params.movieId
-    await movieService.attachCast(movieId, castId);
+    await movieService.attachCast(movieId, castId).lean();
 
 
     res.redirect(`/movies/${movieId}/details`);
@@ -54,7 +54,7 @@ movieController.post('/:movieId/attach-cast', async (req, res) => {
 movieController.get('/:movieId/delete', async (req, res) => {
     const movieId = req.params.movieId;
 
-    const movie = await movieService.getOne(movieId);
+    const movie = await movieService.getOne(movieId).lean();
     if(!movie.creator?.equals(req.user?._id)) {
        return res.redirect('/404');
     }
@@ -67,7 +67,7 @@ movieController.get('/:movieId/delete', async (req, res) => {
 
 movieController.get('/:movieId/edit', async (req, res) =>{
    const movieId = req.params.movieId;
-   const movie = await movieService.getOne(movieId);
+   const movie = await movieService.getOne(movieId).lean();
 
    const categories = getCategoriesViewData(movie.category);
 
@@ -75,6 +75,17 @@ movieController.get('/:movieId/edit', async (req, res) =>{
   
    res.render('movie/edit', { movie, categories });
 });
+
+movieController.post('/:movieId/edit', async (req, res) =>{
+    const movieData = req.body;
+    const movieId = req.params.movieId;
+
+    //TODO: check if creator
+
+    await movieService.update(movieId, movieData).lean();
+
+    res.redirect(`/movies/${movieId}/details`);
+})
 
 function getCategoriesViewData(category) {
     const categoriesMap = {
