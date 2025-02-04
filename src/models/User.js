@@ -2,12 +2,21 @@ import { Schema, model } from "mongoose";
 import bcryptjs from 'bcryptjs';
 
 const userSchema = new Schema({
-   email: String,
-   password: String,
+   email: {
+    type: String,
+    unique: true, // This is not validator, it's index
+    match: /\@[a-zA-Z]+.[a-zA-Z]+$/,
+    minLength: 10,
+   },
+   password: {
+    type: String,
+    match: /^\w+$/,
+    minLength: 6
+   },
 });
 
-userSchema.pre('save', async function(){
-    //TODO: fix update user bug
+userSchema.pre('save', async function() {
+    
     this.password = await bcryptjs.hash(this.password, 10);
 });
 
