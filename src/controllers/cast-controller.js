@@ -12,8 +12,12 @@ castController.get('/create',  (req, res) => {
 
 castController.post('/create',  async (req, res) => {
      const castData = req.body;
+     try {
     await castService.create(castData);
-
+     } catch (err) {
+        const error = getErrorMessage(err);
+        return res.render('/', { error })
+     }
      res.redirect('/');
 });
 

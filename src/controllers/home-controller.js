@@ -6,11 +6,12 @@ const router = Router();
 
 
 router.get('/', async (req, res) => {
+    try {
     const movies = await movieService.getAll();
+    } catch(err) {
+        return res.redirect('404');
+    }
 
-    // Convert documents to plain objects
-    //const plainMovies = movies.map(m => m.toObject());
-   
     res.render('home', { movies });
 });
 
