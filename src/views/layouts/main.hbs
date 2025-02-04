@@ -11,7 +11,13 @@
 <body>
 
     <div id="box">
-
+      
+      {{#if error}}
+      <div class="error-container">
+        <p>{{error}}</p>
+      </div>
+      {{/if}}
+      
        <nav>
        
             <img src="https://static.vecteezy.com/system/resources/thumbnails/012/657/549/small_2x/illustration-negative-film-reel-roll-tapes-for-movie-cinema-video-logo-vector.jpg" alt="logo">
