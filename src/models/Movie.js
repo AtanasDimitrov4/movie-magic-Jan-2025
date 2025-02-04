@@ -1,6 +1,6 @@
 import {Schema, model, Types } from 'mongoose';
 
-//Create schema
+
 const movieSchema = new Schema({
     title: {
         type: String,
