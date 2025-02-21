@@ -14,8 +14,8 @@ const app = express();
 
 //db config
 try{
-   const defaultUri = 'mongodb://127.0.0.1:27017/magic-movies-softuni'
-   await mongoose.connect(process.env.DATABASE_URI ?? defaultUri);
+  
+   await mongoose.connect(process.env.DATABASE_URI);
 
    console.log('DB Connected Successfuly!');
 } catch (err) {
@@ -48,4 +48,4 @@ app.use(routes);
 
 
 //start server
-app.listen(6969, () => console.log('Server is listening on http://localhost:6969...'));
+app.listen(3001, () => console.log('Server is listening on http://localhost:3001...'));
